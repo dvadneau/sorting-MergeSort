@@ -1,3 +1,15 @@
+const buildPrefix = (n, c = ' ') => {
+  let s = '';
+  for (let i = 0; i < n; i++) {
+    s += s + c;
+  }
+  return s;
+};
+
+const buildPrefix2 = (n) => new Array(n).map(() => ' ').join('');
+
+const displayArray = (arr) => `[${arr.join(', ')}]`;
+
 const split = (listToSort, listFirstHalf, listSecondHalf, step = 0) => {
   let index = 0;
   let secondHalfStartIndex = listFirstHalf.length;
@@ -48,16 +60,6 @@ const merge = (listToSort, listFirstHalf, listSecondHalf, step = 0) => {
   console.log('merged:', displayArray(listToSort));
   console.groupEnd();
 };
-
-const buildPrefix = (n, c = ' ') => {
-  let s = '';
-  for (let i = 0; i < n; i++) {
-    s += s + c;
-  }
-  return s;
-};
-const buildPrefix2 = (n) => new Array(n).map(() => ' ').join('');
-const displayArray = (arr) => `[${arr.join(', ')}]`;
 
 const mergeSort = (listToSort) => {
   if (listToSort.length === 1) {
